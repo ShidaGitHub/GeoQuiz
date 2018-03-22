@@ -13,4 +13,9 @@
     <string name="question_americas">%1$d. The Amazon River is the longest river in the Americas.</string>
     <string name="question_asia">%1$d. Lake Baikal is the world\’s oldest and deepest freshwater lake.</string>
     <string name="answers_label">true is %1$d from %2$d</string>
+
+    <string name="warning_text">Are you sure you want to do this?</string>
+    <string name="show_answer_button">Show Answer</string>
+    <string name="cheat_button">Cheat!</string>
+    <string name="judgment_toast">Cheating is wrong.</string>
 </resources>
