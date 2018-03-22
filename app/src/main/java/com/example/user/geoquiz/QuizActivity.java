@@ -51,7 +51,7 @@ public class QuizActivity extends AppCompatActivity {
         if (savedInstanceState != null){
             mCurrentIndex = savedInstanceState.getInt(BundleKeys.KEY_CURRENT_INDEX.name(), 0);
             mCorrectAnswers = savedInstanceState.getInt(BundleKeys.KEY_CORRECT_ANSWERS.name(), 0);
-            Arrays.copyOf(, )
+            mQuestionWasAnswered = savedInstanceState.getBooleanArray(BundleKeys.KEY_QUESTION_WAS_ANSWERED.name());
 
         }
         mQuestionTextView.setText(getString(mQuestionBank[mCurrentIndex].getTextResId(), mCurrentIndex + 1));
@@ -104,8 +104,8 @@ public class QuizActivity extends AppCompatActivity {
     private void updateQuestion() {
         mQuestionTextView.setText(getString(mQuestionBank[mCurrentIndex].getTextResId(), mCurrentIndex + 1));
         mAnswersTextView.setText(getString(R.string.answers_label, mCorrectAnswers, mQuestionBank.length));
-        mTrueButton.setEnabled(!mQuestionWasAnswered[mCorrectAnswers]);
-        mFalseButton.setEnabled(!mQuestionWasAnswered[mCorrectAnswers]);
+        mTrueButton.setEnabled(!mQuestionWasAnswered[mCurrentIndex]);
+        mFalseButton.setEnabled(!mQuestionWasAnswered[mCurrentIndex]);
     }
 
     private void checkAnswer(boolean userPressedTrue) {
